@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Almundo Api Hotels</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+</head>
+<body>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+
+        <h1 id="almundo-api-hotels-test">Almundo API Hotels (test)</h1>
+        <p>API REST desarrollada en Typescript corriendo bajo Node JS implementando Express y Mongo DB. Se incluyen caracteristicas básicas como Listar, Crear, Modificar y Eliminar Hoteles.</p>
+        <h4 id="deploy">Deploy:</h4>
+        <ul>
+          <li>API en entorno de producción consultar en: <a href="https://almundo-ws.herokuapp.com/">https://almundo-ws.herokuapp.com/</a></li>
+        </ul>
+        <h4 id="endpoints">Endpoints:</h4>
+        <table class="table">
+          <thead>
+            <tr class="header">
+              <th>Método</th>
+              <th>URL</th>
+              <th>Funcionalidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="odd">
+              <td>GET</td>
+              <td>/api/hotels</td>
+              <td>Retorna una lista de hoteles.</td>
+            </tr>
+            <tr class="even">
+              <td>GET</td>
+              <td>/api/hotels/:id</td>
+              <td>Retorna el hotel del parametro :id</td>
+            </tr>
+            <tr class="odd">
+              <td>POST</td>
+              <td>/api/hotels</td>
+              <td>Crea un hotel en la base de datos y retorna el hotel creado.</td>
+            </tr>
+            <tr class="even">
+              <td>PUT</td>
+              <td>/api/hotels/:id</td>
+              <td>Actualiza los datos del hotel según el parametro :id y retorna el hotel modificado.</td>
+            </tr>
+            <tr class="odd">
+              <td>DELETE</td>
+              <td>/api/hotels</td>
+              <td>Elimina el hotel según el parametro :id y retorna el hotel eliminado.</td>
+            </tr>
+          </tbody>
+        </table>
+        <h4 id="modelo-de-datos">Modelo de datos:</h4>
+        <pre><code>{
+          name: {type:String, required:true},
+          stars: {type:Number, required:false, min: 0, max: 5},
+          address: {type:String, required:true},
+          images: [String],
+          price: {type: Number, required:true},
+          createAt: { type: Date, default: Date.now },
+          updateAt: Date,
+          active: {type: Boolean, default: true},
+          location:
+          {
+            lat:{type:Number},
+            long:{type:Number}
+          }
+        }
+      </code></pre>
+      <h3 id="repositorio-github">Repositorio GitHub:</h3>
+      <ul>
+        <li><h5 id="httpsgithubcomdexterosalmundo_api"><a href="https://github.com/dexteros/almundo_api">https://github.com/dexteros/almundo_api</a></h5></li>
+      </ul>
+      <h3 id="instalación">Instalación</h3>
+      <p>Requerimientos <a href="https://nodejs.org/">Node.js</a> v8+</p>
+      <ol>
+        <li>Clonar el repositorio</li>
+      </ol>
+      <div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" title="1">$ <span class="fu">git</span> clone https://github.com/dexteros/almundo_api.git</a></code></pre></div>
+      <ol start="2">
+        <li>Instalar dependencias</li>
+      </ol>
+      <div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1">$ <span class="bu">cd</span> almundo_api</a>
+        <a class="sourceLine" id="cb3-2" title="2">$ <span class="ex">npm</span> install</a></code></pre></div>
+        <ol start="3">
+          <li>Compilar a Javascript: comando tsc en la raiz del proyecto</li>
+        </ol>
+        <pre><code>$ tsc
+        </code></pre>
+        <ol start="4">
+          <li>Los archivos compilados se alojan en la carbeta "build"</li>
+        </ol>
+        <div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" title="1">$ <span class="ex">npm</span> run start</a></code></pre></div>
+        <p><strong>Desarrollado por: Juan Manuel Lora</strong></p>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
