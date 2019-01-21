@@ -6,7 +6,8 @@
   "scripts": {
     "ts": "tsc -w",
     "dev": "nodemon ./build/server.js",
-    "start": "tsc && node ./build/server.js"
+    "start": "node ./build/server.js",
+    "postinstall": "tsc"
   },
   "repository": {
     "type": "git",
