@@ -1,4 +1,5 @@
 import {Request, Response, Router} from 'express';
+import path from 'path';
 
 class IndexRoutes{
 
@@ -10,7 +11,7 @@ class IndexRoutes{
   }
 
   routes(){
-    this.router.get('/', (req, res)=>res.send('Almundo API server'));
+    this.router.get('/', (req, res)=>res.sendFile(path.join(__dirname + '/index.html')));
   }
 
 }
