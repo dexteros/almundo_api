@@ -53,7 +53,7 @@ class HotelRoutes{
 
   async deleteHotel(req:Request, res:Response){
     if(ObjectId.isValid(req.params.id)){
-      await Hotel.findByIdAndDelete({_id:req.params.id});
+      const hotel = await Hotel.findByIdAndDelete({_id:req.params.id});
       res.json({"hotels":hotel});
     }else{
       res.json({"hotels":null});

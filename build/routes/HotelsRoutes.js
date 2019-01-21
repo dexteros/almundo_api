@@ -65,7 +65,7 @@ class HotelRoutes {
     deleteHotel(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             if (mongodb_1.ObjectId.isValid(req.params.id)) {
-                yield Hotel_1.default.findByIdAndDelete({ _id: req.params.id });
+                const hotel = yield Hotel_1.default.findByIdAndDelete({ _id: req.params.id });
                 res.json({ "hotels": hotel });
             }
             else {
