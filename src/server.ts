@@ -18,7 +18,7 @@ class Server{
   }
 
   config(){
-    const MONGO_HOST = "mongodb+srv://mongouser:af8zdKFhtaZ3kv2E@mongocloud-pajg1.mongodb.net/test?retryWrites=true";
+    const MONGO_HOST = "mongodb+srv://mongouser:af8zdKFhtaZ3kv2E@mongocloud-pajg1.mongodb.net/almundo?retryWrites=true";
     mongoose.set('useFindAndModify', true);
     mongoose.connect(process.env.MONGO_HOST || MONGO_HOST,{
       useNewUrlParser:true,
