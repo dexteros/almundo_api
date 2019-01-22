@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "ts": "tsc -w",
-    "dev": "nodemon ./build/server.js",
-    "start": "node ./build/server.js",
-    "postinstall": "tsc"
+    "dev": "nodemon ./build/src/server.js",
+    "start": "node ./build/src/server.js",
+    "postinstall": "tsc && npm run html",
+    "html": "copyfiles ./src/**/*.html ./build/"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,7 @@
     "@types/helmet": "0.0.42",
     "@types/mongoose": "^5.3.8",
     "@types/node": "^10.12.18",
+    "copyfiles": "^2.1.0",
     "nodemon": "^1.18.9",
     "typescript": "^3.2.4"
   }
